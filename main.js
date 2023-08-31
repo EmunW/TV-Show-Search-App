@@ -1,21 +1,3 @@
-//Google Calander
-//change color of blocks even in the same category
-//add images maybe?
-
-//search bar to search TV show/ movie
-//display rating, desc
-
-//
-
-
-// const url = 'https://transloc-api-1-2.p.rapidapi.com/agencies.json?callback=call&geo_area=35.80176%2C-78.64347%7C35.78061%2C-78.68218&agencies=12';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '2d411c4c3bmsh537300b59f9b0cbp1538c9jsnc35496b21e13',
-// 		'X-RapidAPI-Host': 'transloc-api-1-2.p.rapidapi.com'
-// 	}
-// };
 const form = document.querySelector('#searchShows');
 form.addEventListener('submit', async function (e){
     try{
@@ -42,10 +24,14 @@ form.addEventListener('submit', async function (e){
 // Make a table of the shows we found???
 function generateTable(result){
     const table = document.createElement('table');
+    table.style.width = '1000px'
+    table.style.height = '1000px'
+    table.style.background = 'lightgrey'
     table.classList.add('allShows');
     table.appendChild(generateHeaders());
 
     const tableBody = document.createElement('tbody');
+    table.style.font = 'Monaco'
     // Currently only adds images to the table
     for(let i=0; i<result.length; i++){
         // Create a row for the table
@@ -75,6 +61,8 @@ function generateTable(result){
                     break;
                 case 2:
                     const summary = document.createElement('text');
+                    summary.style.textAlign = 'center'
+                    summary.style.fontFamily = 'Monospace, Monaco'
                     summary.innerHTML = show.summary;
                     cell.appendChild(summary);
                     break;
@@ -107,6 +95,7 @@ function generateTable(result){
 }
 
 function generateHeaders(){
+    //Container
     const tableHead = document.createElement('thead');
     const hRow = document.createElement('tr');
     tableHead.appendChild(hRow);
@@ -136,48 +125,4 @@ function generateHeaders(){
     statusCell.appendChild(status);
     hRow.appendChild(statusCell);
     return tableHead;
-    
 }
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
-
-
-
-// fetch('https://api.spotify.com/authorize', {
-//     client_id: '8947edd9ffb542d6bf1191ebda1917df',
-//     response_type: 'code',
-//     redirect_uri: 'http://localhost:3000',
-    
-// })
-
-
-
-//Rapid API ty for sp
-
-// async function fetchData() {
-
-// }
-
-
-// const url = 'https://calendarevents.p.rapidapi.com/calendar/a212edcb509733e73dca4ef55f447980c6b2b5db055aaa46bf3fda05f3c6e452@group.calendar.google.com/2';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '2d411c4c3bmsh537300b59f9b0cbp1538c9jsnc35496b21e13',
-// 		'X-RapidAPI-Host': 'calendarevents.p.rapidapi.com'
-// 	}
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
