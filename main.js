@@ -44,7 +44,6 @@ function generateTable(result){
     const table = document.createElement('table');
     table.classList.add('allShows')
     const tableBody = document.createElement('tbody');
-
     // Currently only adds images to the table
     for(let i=0; i<result.length; i++){
         // Create a row for the table
@@ -64,6 +63,13 @@ function generateTable(result){
     table.setAttribute('border', 2);
     table.appendChild(tableBody);
     document.body.appendChild(table);
+}
+
+function generateHeaders(){
+    const tableHead = document.createElement('thead');
+    const hRow = document.createElement('tr');
+    const titleCell = document.createElement('td');
+    const title = document.createTextNode('Title')
 }
 
 // try {

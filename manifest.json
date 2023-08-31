@@ -1,0 +1,11 @@
+{
+    "name": "Easy-Shows",
+    "version": "1.0.0",
+    "description": "List your favorite shows!",
+    "manifest_version": 3,
+    "author": "Brian, Edmund",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Easy-Shows"
+    }
+}
